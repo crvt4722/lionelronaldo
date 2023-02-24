@@ -7,6 +7,7 @@
 #header{
     position: fixed;
     width: 100%;
+    position: relative;
 }
 
 .header-wrapper{
@@ -86,3 +87,44 @@
 .item--comunity{
     transform: translateX(-410%) !important;
 }
+
+#slider{
+    background-color: #fff;
+    width: 70%;
+    margin: 0 auto;
+    min-height: 63rem;
+    max-height: 100rem;
+    position: relative;
+    border-top: 1px solid #808080;
+}
+
+.slider__main img{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.slider__main .control{
+    color: rgb(233, 227, 227);
+    position: absolute;
+    font-size: 4rem;
+    cursor: pointer;
+}
+
+.slider__main .control:hover{
+    opacity: 0.5;
+}
+
+.slider__main .prev{
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slider__main .next{
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
