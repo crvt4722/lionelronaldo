@@ -14,13 +14,14 @@ setInterval(function(){
 
 
 // Slider
+
 let sliderImg = document.getElementById('slider__img')
 let controlPrev = document.querySelector('.prev')
 let controlNext = document.querySelector('.next')
 
 var cnt = 1
 
-// The function to be controlled the slider.
+// The function to be controlled the slider with the next and prev buttons.
 function controlSlider(option){
     if(option == 'next'){
         cnt = (cnt + 1)%4
@@ -37,6 +38,15 @@ function controlSlider(option){
 controlNext.addEventListener('click', controlSlider.bind(this,'next'))
 controlPrev.addEventListener('click', controlSlider.bind(this,'prev'))
 
-// Auto run slider.
-setInterval(controlSlider.bind(this, 'next'), 2500)
+// Auto run slider: Default
+let controlPlay = document.querySelector('.play')
+let controlStop = document.querySelector('.stop')
+var autoRunSlider = setInterval(controlSlider.bind(this, 'next'), 1500)
 
+controlStop.addEventListener('click', () => {
+    clearInterval(autoRunSlider)
+})
+
+controlPlay.addEventListener('click', function(){
+    autoRunSlider = setInterval(controlSlider.bind(this, 'next'), 1500)
+})
