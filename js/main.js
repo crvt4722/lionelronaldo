@@ -21,8 +21,8 @@ function setBackgroundColor(color) {
 // setInterval(setBackgroundColor.bind(this, '#AF1685'), 20000)
 // setInterval(setBackgroundColor.bind(this, 'rgb(154, 169, 179)'), 5000)
 // setInterval(setBackgroundColor.bind(this, 'rgb(92, 78, 57)'), 10000)
-setBackgroundColor('#AF1685')
-setTimeout(setBackgroundColor.bind(this, 'black'), 10000)
+// setBackgroundColor('#AF1685')
+// setTimeout(setBackgroundColor.bind(this, 'black'), 10000)
 
 // Slider
 
@@ -52,12 +52,12 @@ controlPrev.addEventListener('click', controlSlider.bind(this,'prev'))
 // Auto run slider: Default
 let controlPlay = document.querySelector('.play')
 let controlStop = document.querySelector('.stop')
-var autoRunSlider = setInterval(controlSlider.bind(this, 'next'), 4000)
+var autoRunSlider = setInterval(controlSlider.bind(this, 'next'), 5000)
 
 controlStop.addEventListener('click', () => {
     clearInterval(autoRunSlider)
 })
 
 controlPlay.addEventListener('click', function(){
-    autoRunSlider = setInterval(controlSlider.bind(this, 'next'), 4000)
+    autoRunSlider = setInterval(controlSlider.bind(this, 'next'), 5000)
 })

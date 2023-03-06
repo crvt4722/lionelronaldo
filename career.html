@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Toi Cr</title>
+
+        <link rel="stylesheet" href="./assets/css/footer.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
         <link rel="stylesheet" type="text/css" href="./assets/css/base.css">
         <link rel="stylesheet" type="text/css"  type="text/css"href="./assets/css/main.css">
@@ -17,13 +19,36 @@
     </head>
     <script src="./includes/include.js"></script>
 <body>
-    <div class="header" w3-include-html="./includes/header.html"></div>
+    <!-- <div class="header" w3-include-html="./includes/header.html"></div> -->
+
+    <div id="header">
+        <div class="header-wrapper">
+            <div class="slogan">We ride together we die together</div>
+            <div class="header-wrapper__icon">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="main-menu">
+            <div class="main-menu__items">
+                <img  src="./assets/img/web_name.jpg">
+                <div class="main-menu__item"><a href="../index.html">home</a></div>
+                <div class="main-menu__item item--career">
+                    <a href="career.html">career</a>
+                    
+                </div>
+                <div class="main-menu__item item--auction"><a href="career.html">auction</a></div>
+                <div class="main-menu__item item--comunity"><a href="career.html">comunity</a></div>
+            </div>
+        </div>    
+    </div>
 
     <div class="sidebar">
-        <li class="sidebar__introduce">Introduce</li>
-        <ul class="sidebar__seasons">
-            
-            <li class="text">Season</li>
+        <li class="sidebar__introduce"><i class="fa-sharp fa-solid fa-circle-info"> Introduce</i> </li>
+        <li class="text"><i class="fa-sharp fa-regular fa-calendar-days"> Season</i></li>
+
+        <div class="sidebar__seasons">
             <li class="sidebar__items">2008-2009</li>
             <li class="sidebar__items">2009-2010</li>
             <li class="sidebar__items">2010-2011</li>
@@ -39,10 +64,28 @@
             <li class="sidebar__items">2020-2021</li>
             <li class="sidebar__items">2021-2022</li>
             <li class="sidebar__items">2022-2023</li>
-        </ul>
+        </div>
+        
     </div>
+
+    <div class="career-content">
+
+        <div class="career-head">
+            <img src="./assets/img/ro08.jpg" class="avatar left">
+            <div class="nation-club">
+                <p><img src="./assets/img/nation-icon.jpg" alt=""> Nation: Portugal</p>
+                <p><img src="./assets/img/icon-club.jpg" alt=""> Club: Manchester United</p>
+            </div>
+            <img src="./assets/img/roff08.jpg" class="fifa-card right">
+        </div>
+
+    </div>
+
+    </div>
+    <!-- <footer class="footer-distributed" w3-include-html="./includes/footer.html"> </footer> -->
 </body>
     <script>
         includeHTML();
     </script>
+    <script src="./js/career.js"></script>
 </html>
