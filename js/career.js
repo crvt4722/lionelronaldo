@@ -1,4 +1,7 @@
 'use strict'
+// Header fixed.
+let header = document.getElementById('header')
+header.style = `position: fixed;`
 
 // Navigator stop
 let navigatorItems = document.querySelector('.main-menu__items')
