@@ -24,3 +24,28 @@ function showOrHideSeasons(){
 }
 
 sidebarSeason.addEventListener('click', showOrHideSeasons)
+
+// Modal 
+
+let buyBtns = document.querySelectorAll('.buy-btn')
+let modal = document.querySelector('.modal')
+let modalContainer = document.querySelector('.modal-container')
+let modalClose = document.querySelector('.modal-close')
+
+function showModal(){
+    modal.classList.remove('open')
+}
+
+function hideModal(){
+    modal.classList.add('open')
+}
+
+modalClose.addEventListener('click', hideModal)
+
+for (let buyBtn of buyBtns){
+    buyBtn.addEventListener('click', showModal)
+}
+
+modal.addEventListener('click', hideModal)
+modalContainer.addEventListener('click', (e) => e.stopPropagation())
+

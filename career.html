@@ -12,7 +12,7 @@
         <link rel="stylesheet" type="text/css"  type="text/css"href="./assets/css/main.css">
         <link rel="stylesheet" type="text/css" href="./assets/fonts/fontawesome-free-6.3.0-web/css/all.min.css">
         <link rel="icon" href="./assets/img/logo.jpg" type="image/x-icon" />
-    
+        <script src="https://kit.fontawesome.com/d4acca2111.js" crossorigin="anonymous"></script>
         <!-- ReactJs -->
         <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
         <script crossorigin src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"></script> 
@@ -96,30 +96,101 @@
 
         <!-- Buy Shirt -->
         <div class="career__shirts">
-            <div class="shirt shirt-home">
+            <div class="shirt club-shirt-home">
                 <div class="shirt-image"></div>
                 <div class="club text">Manchester United</div>
                 <div class="desc text">2008/2009 Home</div>
                 <div class="buy-btn">Buy <i class="fa-sharp fa-solid fa-cart-shopping" style="font-size:13.5px"></i></div>
             </div>
             
-            <div class="shirt shirt-away">
+            <div class="shirt club-shirt-away">
                 <div class="shirt-image"></div>
                 <div class="club text">Manchester United</div>
                 <div class="desc text">2008/2009 Away</div>
                 <div class="buy-btn">Buy <i class="fa-sharp fa-solid fa-cart-shopping" style="font-size:13.5px"></i></div>
             </div>
 
-            <div class="shirt shirt-third">
+            <div class="shirt club-shirt-third">
                 <div class="shirt-image"></div>
                 <div class="club text">Manchester United</div>
                 <div class="desc text">2008/2009 Third</div>
                 <div class="buy-btn">Buy <i class="fa-sharp fa-solid fa-cart-shopping" style="font-size:13.5px"></i></div>
             </div>
-
         </div>
 
+        <div class="career__shirts">
+            <div class="shirt nation-shirt-home">
+                <div class="shirt-image"></div>
+                <div class="club text">Portugal</div>
+                <div class="desc text">2008/2009 Home</div>
+                <div class="buy-btn">Buy <i class="fa-sharp fa-solid fa-cart-shopping" style="font-size:13.5px"></i></div>
+            </div>
+            
+            <div class="shirt nation-shirt-away">
+                <div class="shirt-image"></div>
+                <div class="club text">Portugal</div>
+                <div class="desc text">2008/2009 Away</div>
+                <div class="buy-btn">Buy <i class="fa-sharp fa-solid fa-cart-shopping" style="font-size:13.5px"></i></div>
+            </div>
+        </div>
         <!-- <footer class="footer-distributed" w3-include-html="./includes/footer.html"> </footer> -->
+    </div>
+
+    <div class="modal open">
+        <div class="modal-container">
+            <div class="modal-header">
+                <i class="modal-close fa-solid fa-xmark"></i>
+                <div class="modal__web-name">
+                    
+                    <h3>    <span class="modal-header__span1">Lionel</span><span class="modal-header__span2">Ronaldo</span></h3>
+                    <p>Be served you is our honor!</p>
+                </div>
+                
+            </div>
+
+            <div class="modal-content">
+
+                <div class="label-container">
+                    <label for="modal__full-name" class="modal-label" >
+                        <i class="fa-sharp fa-solid fa-signature"></i> Full Name: 
+                    </label>
+    
+                    <label for="modal__phone" class="modal-label">
+                        <i class="fa-sharp fa-solid fa-phone"></i> Phone: 
+                    </label>
+    
+                    <label for="modal__address" class="modal-label">
+                        <i class="fa-sharp fa-solid fa-location-dot"></i> Address:
+                    </label>
+    
+                    <label for="" class="modal-label">
+                        <i class="fa-sharp fa-solid fa-shirt"></i> Size:
+                    </label>
+                    
+                    <label for="" class="modal-label" style="transform:translateY(-3px)">
+                        <i class="fa-sharp fa-solid fa-cart-plus"></i> Quantity:
+                    </label> 
+                </div>
+
+                <div class="input-container">
+                    <input id='modal__full-name' type="text" required>
+                    <input id='modal__phone' type='tel' required>
+                    <input id='modal__address' type='text' required>
+
+                    <div class="input-container__radio">
+                        <input type="radio" class="modal__radio-btn" id ='s' value="S" name = 'shirt-size'> <label for="s">S</label>
+                        <input type="radio" class="modal__radio-btn" id ='m' value="M" name = 'shirt-size'> <label for="m">M</label>
+                        <input type="radio" class="modal__radio-btn" id ='l' value="L" name = 'shirt-size'> <label for="l">L</label>
+                        <input type="radio" class="modal__radio-btn" id ='xl' value="XL" name = 'shirt-size'> <label for="xl">XL</label>
+                        <input type="radio" class="modal__radio-btn" id ='2xl' value="2XL" name = 'shirt-size'> <label for="2xl">2XL</label>
+                        <input type="radio" class="modal__radio-btn" id ='3xl' value="3XL" name = 'shirt-size'> <label for="3xl">3XL</label>
+                    </div>
+
+                    <input type="number" name="" id="" min = "1" max = '100' value="1" class="input-container__quantity">
+                </div>    
+                <button type="submit" class="modal-submit-btn">submit <i class="fa-sharp fa-solid fa-circle-check"></i></button>
+            </div>
+        </div>
     </div>
 </body>
     <script>
