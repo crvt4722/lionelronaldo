@@ -33,11 +33,11 @@ let modalContainer = document.querySelector('.modal-container')
 let modalClose = document.querySelector('.modal-close')
 
 function showModal(){
-    modal.classList.remove('open')
+    modal.classList.add('open')
 }
 
 function hideModal(){
-    modal.classList.add('open')
+    modal.classList.remove('open')
 }
 
 modalClose.addEventListener('click', hideModal)
