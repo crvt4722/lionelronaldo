@@ -57,6 +57,8 @@
     border-radius: 10px;
     font-size: 99%;
     animation: careerHeadImg ease-in 0.5s;
+    box-shadow: 10px 10px 5px lightblue;
+    /* box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green; */
 }
 
 .career-head .left{
@@ -84,6 +86,9 @@
     flex-direction: column;
     font-size: 20px;
     animation: nationClub ease-in 2s;
+    /* text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF; */
+    color: coral;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 @keyframes nationClub {
@@ -103,6 +108,8 @@
 .career-head .nation-club p > img{
     width: 15px;
     height: 13px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* box-shadow: 10px 10px 5px lightblue inset; */
 }
 
 /* Career Moment */

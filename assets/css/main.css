@@ -32,6 +32,7 @@ html{
     /* position: absolute; */
     /* text-transform: uppercase; */
     color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     width: 100%;
     line-height: 4.5rem;
     text-align: center;
@@ -105,10 +106,12 @@ html{
     cursor: pointer;
     line-height: 7.2rem; 
     text-transform: uppercase;
+    
 }
 .main-menu__item a{
     text-decoration: none;
     color: #333E63;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 .main-menu__items >.main-menu__item:hover {
     color:rebeccapurple;
@@ -122,6 +125,7 @@ html{
 .main-menu__items img{
     width: 10%; height: 90%;
     transform: translateX(-70%);
+    /* box-shadow: 5px 5px 5px lightblue ; */
 }
 
 .item--career{
