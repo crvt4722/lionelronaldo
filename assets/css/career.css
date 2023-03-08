@@ -105,12 +105,13 @@
     height: 13px;
 }
 
+/* Career Moment */
 .career__moment{
     margin-top: 10px;
     background-color: white;
     width: 100%;
     height: 450px;
-    overflow: auto;
+    /* overflow: auto; */
     display: flex;
     justify-content: space-evenly;
     /* border-bottom: 1px solid #ccc; */
@@ -119,6 +120,7 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+/* Achivement */
 .career__moment .achivement{
     width: 35%;
     /* background-color: black; */
@@ -127,7 +129,9 @@
     overflow: auto;
     flex-direction: column;
     background-image: url('../img/career/background-achivement.jpg');
+    background-repeat: no-repeat;
     background-size: 100%;
+    border: 7px solid #3d3b3b;
 }
 
 .career__moment .achivement h3{
@@ -200,13 +204,34 @@
     flex-direction: column;
 }
 
+/* Moment image */
 .career__moment .moment{
     width: 35%;
     /* background-color: blue; */
     border: 1px solid #ccc;
-    overflow: auto;
+    /* overflow: auto; */
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    /* background-image: url('../img/career/background-achivement.jpg'); */
+    border: 7px solid #3d3b3b;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
+.career__moment .moment img{
+    width: 70%;
+    /* height: 70%; */
+    font-size: 100%;
+    margin-top: 20px;
+}
+
+.career__moment .moment p{
+    font-style: italic;
+}
+
+
+/* Video */
 .career__video{
     
     height: 500px;
@@ -270,24 +295,49 @@
     font-weight: bold;
 }
 
+.buy-btn:hover{
+    opacity: 0.7;
+}
+
 .club-shirt-home .shirt-image{
     background-image: url('../img/career/mu-home-0809.jpg');
+}
+
+.club-shirt-home .shirt-image:hover{
+    background-image: url('../img/career/mu-home-0809-back.jpg');
 }
 
 .club-shirt-away .shirt-image{
     background-image: url('../img/career/mu-away-0809.jpg');
 }
 
+.club-shirt-away .shirt-image:hover{
+    background-image: url('../img/career/mu-away-0809-back.jpg');
+}
+
 .club-shirt-third .shirt-image{
     background-image: url('../img/career/mu-third-0809.jpg');
+}
+
+.club-shirt-third .shirt-image:hover{
+    background-image: url('../img/career/mu-third-0809-back.jpg');
 }
 
 .nation-shirt-home .shirt-image{
     background-image: url('../img/career/por-home-08.jpg');
 }
 
+.nation-shirt-home .shirt-image:hover{
+    background-image: url('../img/career/por-home-08-back.jpg');
+}
+
 .nation-shirt-away .shirt-image{
     background-image: url('../img/career/por-away-08.jpg');
 }
+
+.nation-shirt-away .shirt-image:hover{
+    background-image: url('../img/career/por-away-08-back.jpg');
+}
+
 
 
