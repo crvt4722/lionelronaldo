@@ -1,0 +1,16 @@
+.container{
+    /* position: ; */
+    background-color: #666;
+    width: 100%;
+    min-height: 63rem;
+    max-height: 100rem;
+}
+
+.container .chat-box{
+    /* position: absolute; */
+    margin: 0 auto;
+    width: 60%;
+    height: 63rem;
+    background-color: rgb(237, 237, 230);
+    border: 1px solid #ccc;
+}
