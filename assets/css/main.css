@@ -160,9 +160,9 @@ html{
     height: 100%; 
     /* font-size: 100%; */
     position: absolute;
-    animation: imageSlider ease-in 7s;
+    animation: imageSlider ease-in 3s;
 
-    object-fit: contain;
+    object-fit: cover;
 }
 
 @keyframes imageSlider {
