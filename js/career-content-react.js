@@ -9,14 +9,16 @@ function Header({
     linkAvaHead = "./assets/img/career/2008-2009/head-avatar.jpg", 
     nation = 'Portugal',
     club = 'Manchester United',
-    linkFifaHead = "./assets/img/career/2008-2009/head-fifa.jpg"
+    linkFifaHead = "./assets/img/career/2008-2009/head-fifa.jpg",
+    linkClubIcon = './assets/img/career/2008-2009/club-icon.jpg',
+    linkNationIcon = './assets/img/career/2008-2009/nation-icon.jpg'
 }){
     return(
         <>
             <img src= {linkAvaHead} className="avatar left"/>
             <div className="nation-club">
-                <p><img src="./assets/img/career/nation-icon.jpg" alt=""/> Nation: {nation}</p>
-                <p><img src="./assets/img/career/icon-club.jpg" alt=""/> Club: {club}</p>
+                <p><img src= {linkNationIcon} alt=""/> Nation: {nation}</p>
+                <p><img src= {linkClubIcon} alt=""/> Club: {club}</p>
             </div>
             <img src= {linkFifaHead} className="fifa-card right"/>
         </>
@@ -95,11 +97,12 @@ function CareerMoment({
 
 function CareerVideo({
     // Video
+    linkYoutube = 'https://www.youtube.com/embed/Quk-X1BEznE',
     descYoutube = 'Cristiano Ronaldo Hightlights 2008/09'
 }){
     return(
         <>
-            <iframe src="https://www.youtube.com/embed/Quk-X1BEznE"></iframe>
+            <iframe src = {linkYoutube}></iframe>
             <p>{descYoutube}</p>
         </>
     )
@@ -292,193 +295,161 @@ function NationShirts({
         </>
     )
 }
-function Content({
-    club = 'Real Madrid',
-    nation = 'Portugal',
-    // Shirts
-    season = '2008/09',
-
-    linkHomeShirt = './assets/img/career/2008-2009/home-shirt.jpg',
-    linkHomeShirtBack = './assets/img/career/2008-2009/home-shirt-back.jpg', 
-    linkAwayShirt = './assets/img/career/2008-2009/away-shirt.jpg',
-    linkAwayShirtBack = './assets/img/career/2008-2009/away-shirt-back.jpg',
-    linkThirdShirt = './assets/img/career/2008-2009/third-shirt.jpg',
-    linkThirdShirtBack ='./assets/img/career/2008-2009/third-shirt-back.jpg',
-    linkNationHomeShirt ='./assets/img/career/2008-2009/nation-home.jpg',
-    linkNationHomeShirtBack=  './assets/img/career/2008-2009/nation-home-back.jpg',
-    linkNationAwayShirt='./assets/img/career/2008-2009/nation-away.jpg',
-    linkNationAwayShirtBack= './assets/img/career/2008-2009/nation-away-back.jpg'
-
-}){
-
-    // Hover Shirt
-    const [isHoverHomeShirt, setIsHoverHomeShirt] = React.useState(false);
-    const [isHoverAwayShirt, setIsHoverAwayShirt] = React.useState(false);
-    const [isHoverThirdShirt, setIsHoverThirdShirt] = React.useState(false);
-    const [isHoverNationHomeShirt, setIsHoverNationHomeShirt] = React.useState(false);
-    const [isHoverNationAwayShirt, setIsHoverNationAwayShirt] = React.useState(false);
 
 
-    // Home Shirt
-    linkHomeShirt = `url(` +`'` + linkHomeShirt  +`'` +`)`
-    linkHomeShirtBack = `url(` +`'` + linkHomeShirtBack  +`'` +`)`
+function getLinkImageInSeason(season = '2008-2009'){
+    let club = ''
+    const mu = ['2008-2009', '2021-2022']
+    const alnassr = ['2022-2023']
+    const juventus = ['2018-2019', '2019-2020', '2020-2021']
 
-    const homeShirt = {
-        backgroundImage: isHoverHomeShirt? 
-        linkHomeShirtBack: linkHomeShirt,
-    }
+    if(mu.includes(season)) club = 'Manchester United'
+    else if (alnassr.includes(season)) club = 'Al-nassr'
+    else if (juventus.includes(season)) club = 'Juventus'
+    else club = 'Real Madrid'
 
-    function handleHoverHomeShirt(){
-        setIsHoverHomeShirt(true)
-    }
+    return ({
+        club: club,
+        clubIcon: './assets/img/career/'  + season + '/club-icon.jpg',
+        nationIcon: './assets/img/career/'  + season + '/nation-icon.jpg',
+        headAvatar: './assets/img/career/'  + season + '/head-avatar.jpg',
+        headFifa: './assets/img/career/'  + season + '/head-fifa.jpg',
+        homeShirt: './assets/img/career/'  + season + '/home-shirt.jpg',
+        awayShirt: './assets/img/career/'  + season + '/away-shirt.jpg',
+        thirdShirt: './assets/img/career/'  + season + '/third-shirt.jpg',
+        nationHome: './assets/img/career/'  + season + '/nation-home.jpg',
+        nationAway: './assets/img/career/'  + season + '/nation-away.jpg'
+    })
+}
 
-    function handleLeaveHomeShirt(){
-        setIsHoverHomeShirt(false)
-    }
-
-    // Away Shirt
-
-    linkAwayShirt = `url(` +`'` + linkAwayShirt  +`'` +`)`
-    linkAwayShirtBack = `url(` +`'` + linkAwayShirtBack  +`'` +`)`
-
-    const awayShirt = {
-        backgroundImage: isHoverAwayShirt? 
-        linkAwayShirtBack: linkAwayShirt,
-    }
-
-    function handleHoverAwayShirt(){
-        setIsHoverAwayShirt(true)
-    }
-
-    function handleLeaveAwayShirt(){
-        setIsHoverAwayShirt(false)
-    }
-
-    // Third Shirt
-
-    linkThirdShirt = `url(` +`'` + linkThirdShirt  +`'` +`)`
-    linkThirdShirtBack = `url(` +`'` + linkThirdShirtBack  +`'` +`)`
-
-    const thirdShirt = {
-        backgroundImage: isHoverThirdShirt? 
-        linkThirdShirtBack: linkThirdShirt,
-    }
-
-    function handleHoverThirdShirt(){
-        setIsHoverThirdShirt(true)
-    }
-
-    function handleLeaveThirdShirt(){
-        setIsHoverThirdShirt(false)
-    }
-
-    // Nation Home Shirt
-
-    linkNationHomeShirt = `url(` +`'` + linkNationHomeShirt  +`'` +`)`
-    linkNationHomeShirtBack = `url(` +`'` + linkNationHomeShirtBack  +`'` +`)`
-
-    const nationHomeShirt = {
-        backgroundImage: isHoverNationHomeShirt? 
-        linkNationHomeShirtBack: linkNationHomeShirt,
-    }
-
-    function handleHoverNationHomeShirt(){
-        setIsHoverNationHomeShirt(true)
-    }
-
-    function handleLeaveNationHomeShirt(){
-        setIsHoverNationHomeShirt(false)
-    }
-
-    // Nation Away Shirt
-
-    linkNationAwayShirt = `url(` +`'` + linkNationAwayShirt  +`'` +`)`
-    linkNationAwayShirtBack = `url(` +`'` + linkNationAwayShirtBack  +`'` +`)`
-    const nationAwayShirt = {
-        backgroundImage: isHoverNationAwayShirt? 
-        linkNationAwayShirtBack: linkNationAwayShirt,
-    }
-
-    function handleHoverNationAwayShirt(){
-        setIsHoverNationAwayShirt(true)
-    }
-
-    function handleLeaveNationAwayShirt(){
-        setIsHoverNationAwayShirt(false)
-    }
+function changeCareerContent(props = {}){
+    careerHead.render(<Header
+        club= {props.club}
+        linkAvaHead={props.headAvatar}
+        linkFifaHead = {props.headFifa}
+        linkClubIcon = {props.clubIcon}
+        linkNationIcon ={props.nationIcon}
+    />)
     
-    // Add function to buy button.
-    function showModal(){
-        var modal = document.querySelector('.modal')
-        modal.classList.add('open')
+    careerMoment.render(<CareerMoment
+    
+    />)
+    
+    careerVideo.render(<CareerVideo
+    />)
+    
+    clubShirts.render(<ClubShirts 
+        linkHomeShirt= {props.homeShirt}
+        linkAwayShirt = {props.awayShirt}
+        linkThirdShirt = {props.thirdShirt}
+    />)
+    
+    nationShirts.render(<NationShirts
+        linkNationHomeShirt = {props.nationHome}
+        linkNationAwayShirt = {props.nationAway}
+    />)
+}
+
+var cntSideBar = 1;
+function SideBar(){
+    const [show, setShow]  = React.useState(false)
+    
+
+    const sidebarSeason = {
+        listStyle: 'none',
+        display: show? 'inline': 'none'
     }
 
-    // Return the model.
+    function showOrHideSeasons(){
+        if (cntSideBar == 1){
+            setShow(true)
+            cntSideBar = 0
+        }
+        else{
+            setShow(false)
+            cntSideBar = 1
+        }
+    }
+
+    
+
     return(
         <>
+        
+        <li className="sidebar__introduce"><i className="fa-sharp fa-solid fa-circle-info"> Introduce</i> </li>
+        <li className="text" onClick = {showOrHideSeasons}><i className="fa-sharp fa-regular fa-calendar-days"> Season</i></li>
 
-        <div className="career__shirts">
-            <div className="shirt club-shirt-home" >
-                <div className="shirt-image" 
-                    style={homeShirt}
-                    onMouseEnter = {handleHoverHomeShirt}
-                    onMouseLeave = {handleLeaveHomeShirt}
-                    ></div>
-                <div className="club text">{club}</div>
-                <div className="desc text">{season} Home</div>
-                <div className="buy-btn" onClick = {showModal}>Buy <i className="fa-sharp fa-solid fa-cart-shopping" ></i></div>
-            </div>
-            
-            <div className="shirt club-shirt-away">
-                <div className="shirt-image"
-                    style={awayShirt}
-                    onMouseEnter = {handleHoverAwayShirt}
-                    onMouseLeave = {handleLeaveAwayShirt}
-                ></div>
-                <div className="club text">{club}</div>
-                <div className="desc text">{season} Away</div>
-                <div className="buy-btn" onClick = {showModal}>Buy <i className="fa-sharp fa-solid fa-cart-shopping" ></i></div>
-            </div>
+        <div className="sidebar__seasons" style = {sidebarSeason}>
 
-            <div className="shirt club-shirt-third">
-                <div className="shirt-image"
-                    style={thirdShirt}
-                    onMouseEnter = {handleHoverThirdShirt}
-                    onMouseLeave = {handleLeaveThirdShirt}
-                ></div>
-                <div className="club text">{club}</div>
-                <div className="desc text">{season} Third</div>
-                <div className="buy-btn" onClick = {showModal}>Buy <i className="fa-sharp fa-solid fa-cart-shopping" ></i></div>
-            </div>
+            <li className="sidebar__items one" onClick={()=>{
+                const itemOne = document.querySelector('.sidebar__items.one')
+                changeCareerContent(getLinkImageInSeason(itemOne.innerHTML))
+            }}>2008-2009</li>
+            <li className="sidebar__items two" onClick={()=>{
+                const itemOne = document.querySelector('.sidebar__items.two')
+                changeCareerContent(getLinkImageInSeason(itemOne.innerHTML))
+            }}>2009-2010</li>
+            <li className="sidebar__items three" onClick={()=>{
+                const itemOne = document.querySelector('.sidebar__items.three')
+                changeCareerContent(getLinkImageInSeason(itemOne.innerHTML))
+            }}>2010-2011</li>
+            <li className="sidebar__items four" onClick={()=>{
+                const itemOne = document.querySelector('.sidebar__items.four')
+                changeCareerContent(getLinkImageInSeason(itemOne.innerHTML))
+            }}>2011-2012</li>
+            <li className="sidebar__items five" onClick={()=>{
+                const itemOne = document.querySelector('.sidebar__items.five')
+                changeCareerContent(getLinkImageInSeason(itemOne.innerHTML))
+            }}>2012-2013</li>
+            <li className="sidebar__items six" onClick={()=>{
+                const itemOne = document.querySelector('.sidebar__items.six')
+                changeCareerContent(getLinkImageInSeason(itemOne.innerHTML))
+            }}>2013-2014</li>
+            <li className="sidebar__items seven" onClick={()=>{
+                const itemOne = document.querySelector('.sidebar__items.seven')
+                changeCareerContent(getLinkImageInSeason(itemOne.innerHTML))
+            }}>2014-2015</li>
+            <li className="sidebar__items eight" onClick={()=>{
+                const itemOne = document.querySelector('.sidebar__items.eight')
+                changeCareerContent(getLinkImageInSeason(itemOne.innerHTML))
+            }}>2015-2016</li>
+            <li className="sidebar__items nine" onClick={()=>{
+                const itemOne = document.querySelector('.sidebar__items.nine')
+                changeCareerContent(getLinkImageInSeason(itemOne.innerHTML))
+            }}>2016-2017</li>
+            <li className="sidebar__items ten" onClick={()=>{
+                const itemOne = document.querySelector('.sidebar__items.ten')
+                changeCareerContent(getLinkImageInSeason(itemOne.innerHTML))
+            }}>2017-2018</li>
+            <li className="sidebar__items eleven" onClick={()=>{
+                const itemOne = document.querySelector('.sidebar__items.eleven')
+                changeCareerContent(getLinkImageInSeason(itemOne.innerHTML))
+            }}>2018-2019</li>
+            <li className="sidebar__items twelve" onClick={()=>{
+                const itemOne = document.querySelector('.sidebar__items.twelve')
+                changeCareerContent(getLinkImageInSeason(itemOne.innerHTML))
+            }}>2019-2020</li>
+            <li className="sidebar__items thirteen" onClick={()=>{
+                const itemOne = document.querySelector('.sidebar__items.thirteen')
+                changeCareerContent(getLinkImageInSeason(itemOne.innerHTML))
+            }}>2020-2021</li>
+            <li className="sidebar__items fourteen" onClick={()=>{
+                const itemOne = document.querySelector('.sidebar__items.fourteen')
+                changeCareerContent(getLinkImageInSeason(itemOne.innerHTML))
+            }}>2021-2022</li>
+            <li className="sidebar__items fifteen" onClick={()=>{
+                const itemOne = document.querySelector('.sidebar__items.fifteen')
+                changeCareerContent(getLinkImageInSeason(itemOne.innerHTML))
+            }}>2022-2023</li>
         </div>
-
-        <div className="career__shirts">
-            <div className="shirt nation-shirt-home">
-                <div className="shirt-image"
-                    style={nationHomeShirt}
-                    onMouseEnter = {handleHoverNationHomeShirt}
-                    onMouseLeave = {handleLeaveNationHomeShirt}
-                ></div>
-                <div className="club text">{nation}</div>
-                <div className="desc text">{season} Home</div>
-                <div className="buy-btn" onClick = {showModal}>Buy <i className="fa-sharp fa-solid fa-cart-shopping"></i></div>
-            </div>
-            
-            <div className="shirt nation-shirt-away">
-                <div className="shirt-image"
-                    style={nationAwayShirt}
-                    onMouseEnter = {handleHoverNationAwayShirt}
-                    onMouseLeave = {handleLeaveNationAwayShirt}
-                ></div>
-                <div className="club text">{nation}</div>
-                <div className="desc text">{season} Away</div>
-                <div className="buy-btn" onClick = {showModal}>Buy <i className="fa-sharp fa-solid fa-cart-shopping"></i></div>
-            </div>
-        </div>
-
+        
+    
         </>
     )
 }
+
+const sidebar = ReactDOM.createRoot(document.querySelector('.sidebar'))
+sidebar.render(<SideBar/>)
 
 // Get the content container DOM.
 const careerHead = ReactDOM.createRoot(document.querySelector('.career-head'))
@@ -489,10 +460,7 @@ const nationShirts = ReactDOM.createRoot(document.querySelector('.nation__shirts
 
 
 careerHead.render(<Header
-    nation = 'Portugal'
-    club = 'Real Madrid'
-    linkAvaHead = './assets/img/career/2009-2010/head-avatar.jpg'
-    linkFifaHead = './assets/img/career/2009-2010/head-fifa.jpg'
+
 />)
 
 careerMoment.render(<CareerMoment
@@ -500,34 +468,16 @@ careerMoment.render(<CareerMoment
 />)
 
 careerVideo.render(<CareerVideo
-
 />)
 
 clubShirts.render(<ClubShirts 
-    nation = 'Portugal'
-    club = 'Real Madrid'
-    // linkAvaHead = './assets/img/career/2009-2010/head-avatar.jpg'
-    // linkFifaHead = './assets/img/career/2009-2010/head-fifa.jpg'
 
-    linkHomeShirt = './assets/img/career/2009-2010/home-shirt.jpg'
-    linkHomeShirtBack = './assets/img/career/2009-2010/home-shirt-back.jpg'
-    linkAwayShirt = './assets/img/career/2009-2010/away-shirt.jpg'
-    linkAwayShirtBack = './assets/img/career/2009-2010/away-shirt-back.jpg'
-    linkThirdShirt = './assets/img/career/2009-2010/third-shirt.jpg'
-    linkThirdShirtBack ='./assets/img/career/2009-2010/third-shirt-back.jpg'
-    // linkNationHomeShirt ='./assets/img/career/2009-2010/nation-home.jpg'
-    // linkNationHomeShirtBack=  './assets/img/career/2009-2010/nation-home-back.jpg'
-    // linkNationAwayShirt='./assets/img/career/2009-2010/nation-away.jpg'
-    // linkNationAwayShirtBack= './assets/img/career/2009-2010/nation-away-back.jpg'
 />)
 
 nationShirts.render(<NationShirts
-    nation = 'Portugal'
-    club = 'Real Madrid'
-    linkNationHomeShirt ='./assets/img/career/2009-2010/nation-home.jpg'
-    linkNationHomeShirtBack=  './assets/img/career/2009-2010/nation-home-back.jpg'
-    linkNationAwayShirt='./assets/img/career/2009-2010/nation-away.jpg'
-    linkNationAwayShirtBack= './assets/img/career/2009-2010/nation-away-back.jpg'
+
 />)
+
+
 
 

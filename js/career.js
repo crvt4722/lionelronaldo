@@ -8,7 +8,8 @@ let navigatorItems = document.querySelector('.main-menu__items')
 navigatorItems.style = `animation: none;`
 
 // Side bar.
-let sidebarSeason = document.querySelector('.text')
+
+/*let sidebarSeason = document.querySelector('.text')
 let sidebarSeasonYear = document.querySelector('.sidebar__seasons')
 var cnt = 1;
 
@@ -23,7 +24,7 @@ function showOrHideSeasons(){
     }
 }
 
-sidebarSeason.addEventListener('click', showOrHideSeasons)
+sidebarSeason.addEventListener('click', showOrHideSeasons) */
 
 // Modal 
 
