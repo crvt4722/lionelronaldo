@@ -16,11 +16,8 @@
         <link rel="icon" href="./assets/img/logo.jpg" type="image/x-icon" />
         <script src="https://kit.fontawesome.com/d4acca2111.js" crossorigin="anonymous"></script>
         <!-- ReactJs -->
-
-        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
+        <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"></script> 
     </head>
     <script src="./includes/include.js"></script>
 <body>
@@ -74,17 +71,116 @@
     </div>
 
     <div class="career-content">
-        <div class="career-head"></div>
 
-        <div class="career__moment"></div>
+        <!-- Head content -->
+        <div class="career-head">
+            <img src="./assets/img/career/2008-2009/head-avatar.jpg" class="avatar left">
+            <div class="nation-club">
+                <p><img src="./assets/img/career/nation-icon.jpg" alt=""> Nation: Portugal</p>
+                <p><img src="./assets/img/career/icon-club.jpg" alt=""> Club: Manchester United</p>
+            </div>
+            <img src="./assets/img/career/2008-2009/head-fifa.jpg" class="fifa-card right">
 
-        <div class="career__video"></div>
+        </div>
+                
+        <!-- Titles and moments -->
+        <div class="career__moment">
+            <div class="achivement">
+                <div class="goals-assits">
+                    <div class="goals-assits__left">
+                        <h3><i class="fa-sharp fa-solid fa-futbol"></i> Goals : <span>35</span></h3>
+                        <h3><i class="fa-sharp fa-solid fa-users"></i> Assits: <span>12</span></h3>
+                    </div>
 
-        <div class="career__shirts club__shirts"></div>
+                    <div class="goals-assits__right">
+                        <h3><i class="fa-sharp fa-solid fa-futbol"></i> Cup C1: <span>1</span></h3>
+                        <h3><i class="fa-sharp fa-solid fa-futbol"></i> Nation: <span>3</span></h3>
+                    </div>
+                </div>
 
-        <div class="career__shirts nation__shirts"></div>
+                <div class="titles-awards">
+                    <div class="titles">
+                        <h3 style="text-align: center;"><i class="fa-solid fa-trophy"></i> TROPHIES <i class="fa-sharp fa-solid fa-trophy"></i></h3>
+
+                        <h3><span class="icon c1"></span>Champions League</h3>
+                        <h3><span class="icon nha"></span>Premier League</h3>
+                        <h3><span class="icon ffclubwc"></span>FIFA Club World Cup</h3>
+                        <h3><span class="icon comunityshield"></span>Community Shield</h3>
+                    </div>
+
+                    <div class="awards">
+                        <h3 style="text-align: center;"><i class="fa-solid fa-award"></i> AWARDS <i class="fa-solid fa-award"></i></h3>
+                        
+                        <h3><span class="icon balondor"></span>Ballon d'Or</h3>
+                        <h3><span class="icon goldenshoe"></span>European Golden Shoe</h3>
+                        <h3><span class="icon goldmedal"></span>World Soccer Player of the Year</h3>
+                        <h3><span class="icon goldmedal"></span>UEFA Team of the Year</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="moment">
+                <img src="./assets/img/career/2008-2009/moment1.jpg" alt="">
+                <p>Cristiano Ronaldo 2008/09</p>
+
+                <img src="./assets/img/career/2008-2009/moment2.jpg" alt="">
+                <p>His first Champions League title</p>
+
+                <img src="./assets/img/career/2008-2009/moment3.jpg" alt="">
+                <p>Also his first Balon d'Or </p>
+
+                <img src="./assets/img/career/2008-2009/moment4.jpg" alt="">
+                <p>Cristiano Ronaldo 2008/09 </p>
+            </div>
+        </div>
+
+        <!-- Hightlight video -->
+        <div class="career__video">
+            <iframe src="https://www.youtube.com/embed/Quk-X1BEznE"></iframe>
+            <p>Cristiano Ronaldo Hightlights 2008/09</p>
+        </div>
+
+        <!-- Buy Shirt -->
+        <div class="career__shirts">
+            <div class="shirt club-shirt-home">
+                <div class="shirt-image"></div>
+                <div class="club text">Manchester United</div>
+                <div class="desc text">2008/2009 Home</div>
+                <div class="buy-btn">Buy <i class="fa-sharp fa-solid fa-cart-shopping" style="font-size:13.5px"></i></div>
+            </div>
+            
+            <div class="shirt club-shirt-away">
+                <div class="shirt-image"></div>
+                <div class="club text">Manchester United</div>
+                <div class="desc text">2008/2009 Away</div>
+                <div class="buy-btn">Buy <i class="fa-sharp fa-solid fa-cart-shopping" style="font-size:13.5px"></i></div>
+            </div>
+
+            <div class="shirt club-shirt-third">
+                <div class="shirt-image"></div>
+                <div class="club text">Manchester United</div>
+                <div class="desc text">2008/2009 Third</div>
+                <div class="buy-btn">Buy <i class="fa-sharp fa-solid fa-cart-shopping" style="font-size:13.5px"></i></div>
+            </div>
+        </div>
+
+        <div class="career__shirts">
+            <div class="shirt nation-shirt-home">
+                <div class="shirt-image"></div>
+                <div class="club text">Portugal</div>
+                <div class="desc text">2008/2009 Home</div>
+                <div class="buy-btn">Buy <i class="fa-sharp fa-solid fa-cart-shopping" style="font-size:13.5px"></i></div>
+            </div>
+            
+            <div class="shirt nation-shirt-away">
+                <div class="shirt-image"></div>
+                <div class="club text">Portugal</div>
+                <div class="desc text">2008/2009 Away</div>
+                <div class="buy-btn">Buy <i class="fa-sharp fa-solid fa-cart-shopping" style="font-size:13.5px"></i></div>
+            </div>
+        </div>
+        <!-- <footer class="footer-distributed" w3-include-html="./includes/footer.html"> </footer> -->
     </div>
-
 
     <div class="modal">
         <div class="modal-container">
@@ -143,13 +239,8 @@
         </div>
     </div>
 </body>
-    
-
-   <script type="text/babel" src="./js/career-content-react.js">
+    <script>
+        includeHTML();
     </script>
-
     <script src="./js/career.js"></script>
-
-<body>
 </html>
-

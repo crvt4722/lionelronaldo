@@ -27,10 +27,10 @@ sidebarSeason.addEventListener('click', showOrHideSeasons)
 
 // Modal 
 
-let buyBtns = document.querySelectorAll('.buy-btn')
-let modal = document.querySelector('.modal')
-let modalContainer = document.querySelector('.modal-container')
-let modalClose = document.querySelector('.modal-close')
+var buyBtns = document.querySelectorAll('.buy-btn')
+var modal = document.querySelector('.modal')
+var modalContainer = document.querySelector('.modal-container')
+var modalClose = document.querySelector('.modal-close')
 
 function showModal(){
     modal.classList.add('open')
