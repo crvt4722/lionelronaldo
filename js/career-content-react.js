@@ -34,51 +34,79 @@ function CareerMoment({
     descMoment2 = 'His first Champions League title',
     descMoment3 = `Also his first Balon d'Or`,
     descMoment4 = 'Cristiano Ronaldo 2008/09',
+
+    moments = [
+        ["./assets/img/career/2008-2009/moment1.jpg", "Cristiano Ronaldo 2008/09"],
+        ["./assets/img/career/2008-2009/moment2.jpg", 'His first Champions League title'],
+        ["./assets/img/career/2008-2009/moment3.jpg", 'Also his first Balon d\'Or'],
+        ["./assets/img/career/2008-2009/moment4.jpg", "Cristiano Ronaldo 2008/09"]
+    ],
     
     // Achivement
-    goalsAmount = 35,
-    assistsAmount = 12,
-    goalsC1 = 1,
-    goalsNation = 3
+    clubGoals = 26,
+    clubAssits = 9,
+    nationGoals = 1,
+    nationAssits = 0,
+
+    trophies = ['Champions League', 'Premier League', 'FIFA Club World Cup', 'Community Shield'],
+    awards = ['Ballon d\'Or', 'European Golden Shoe', 'World Soccer Player of the Year', 'UEFA Team of the Year']
 }){
     return (
         <>
             <div className="achivement">
                 <div className="goals-assits">
                     <div className="goals-assits__left">
-                        <h3><i className="fa-sharp fa-solid fa-futbol"></i> Goals : <span>{goalsAmount}</span></h3>
-                        <h3><i className="fa-sharp fa-solid fa-users"></i> Assits: <span>{assistsAmount}</span></h3>
+                        <h3><i className="fa-sharp fa-solid fa-futbol"></i> Club Goals : <span>{clubGoals}</span></h3>
+                        <h3><i className="fa-sharp fa-solid fa-users"></i> Club Assits: <span>{clubAssits}</span></h3>
+                        {/* <h3><i className="fa-sharp fa-solid fa-futbol"></i> C1 Goals : <span>{goalsAmount}</span></h3> */}
                     </div>
 
                     <div className="goals-assits__right">
-                        <h3><i className="fa-sharp fa-solid fa-futbol"></i> Cup C1: <span>{goalsC1}</span></h3>
-                        <h3><i className="fa-sharp fa-solid fa-futbol"></i> Nation: <span>{goalsNation}</span></h3>
+                        <h3><i className="fa-sharp fa-solid fa-futbol"></i> Nation Goals: <span>{nationGoals}</span></h3>
+                        <h3><i className="fa-sharp fa-solid fa-users"></i> Nation Assits: <span>{nationAssits}</span></h3>
+                        {/* <h3><i className="fa-sharp fa-solid fa-users"></i> C1 Assits: <span>{assistsAmount}</span></h3> */}
                     </div>
                 </div>
 
                 <div className="titles-awards">
                     <div className="titles">
                         <h3><i className="fa-solid fa-trophy"></i> TROPHIES <i className="fa-sharp fa-solid fa-trophy"></i></h3>
+                        
+                        {trophies.map((trophy, index) => {
+                            return <h3 key = {index}><span className="icon c1"></span>{trophy}</h3>
+                        })}
 
-                        <h3><span className="icon c1"></span>Champions League</h3>
-                        <h3><span className="icon nha"></span>Premier League</h3>
+                        {/* <h3><span className="icon nha"></span>Premier League</h3>
                         <h3><span className="icon ffclubwc"></span>FIFA Club World Cup</h3>
-                        <h3><span className="icon comunityshield"></span>Community Shield</h3>
+                        <h3><span className="icon comunityshield"></span>Community Shield</h3> */}
                     </div>
 
                     <div className="awards">
                         <h3><i className="fa-solid fa-award"></i> AWARDS <i className="fa-solid fa-award"></i></h3>
                         
-                        <h3><span className="icon balondor"></span>Ballon d'Or</h3>
-                        <h3><span className="icon goldenshoe"></span>European Golden Shoe</h3>
-                        <h3><span className="icon goldmedal"></span>World Soccer Player of the Year</h3>
-                        <h3><span className="icon goldmedal"></span>UEFA Team of the Year</h3>
+                        {/* <h3><span className="icon goldenshoe"></span>European Golden Shoe</h3> */}
+                        
+                        {
+                            awards.map((award,index) => {
+                                return <h3 key = {index}><span className="icon goldenshoe"></span>{award}</h3>
+                            })
+                        }
                     </div>
                 </div>
             </div>
 
             <div className="moment">
-                <img src= {linkImgMoment1} alt=""/>
+                {
+                    moments.map((moment, index)=>{
+                        return (
+                            
+                            <img key = {index} src= {moment[0]} alt=""/>
+                            
+                            
+                        )
+                    })
+                }
+                {/* <img src= {linkImgMoment1} alt=""/>
                 <p>{descMoment1}</p>
 
                 <img src={linkImgMoment2} alt=""/>
@@ -88,7 +116,7 @@ function CareerMoment({
                 <p>{descMoment3}</p>
 
                 <img src={linkImgMoment4} alt=""/>
-                <p>{descMoment4} </p>
+                <p>{descMoment4} </p> */}
             </div>
         
         </>
@@ -299,20 +327,143 @@ function NationShirts({
 
 function getLinkImageInSeason(season = '2008-2009'){
     let club = ''
+    let linkYoutube = ''
+    let clubGoals, clubAssits, nationGoals, nationAssits
+    let trophies = [], awards = []
+
+    switch (season) {
+        case '2008-2009':
+            clubGoals = 26; clubAssits = 9; nationGoals = 1; nationAssits = 0
+            trophies = ['Premier League', 'English League Cup']
+            awards = ['FIFA Puskas Award', 'FIFPro World XI Appearances']
+            linkYoutube = 'https://www.youtube.com/embed/Quk-X1BEznE'
+            break;
+        case '2009-2010':
+            clubGoals = 33; clubAssits = 8; nationGoals = 1; nationAssits = 3
+            trophies = []
+            awards = ['FIFPro World XI Appearances']
+            linkYoutube = 'https://www.youtube.com/embed/zaKbBMnMFTY'
+            break;
+        case '2010-2011':
+            clubGoals = 53; clubAssits = 16; nationGoals = 3 ; nationAssits = 1 
+            trophies = ['Copa del Rey']
+            awards = ['European Golden Shoe', 'FIFPro World XI Appearances', 'Pichichi']   
+            linkYoutube = 'https://www.youtube.com/embed/hgswlGn-V2s'        
+            break
+        case '2011-2012':
+            clubGoals = 60; clubAssits = 15; nationGoals = 9 ; nationAssits = 3
+            trophies = ['La Liga', 'Supercopa de España', 'FIFPro World XI Appearances']
+            awards = ['FIFPro World XI Appearances']
+            linkYoutube = 'https://www.youtube.com/embed/2X-4AQME_dA'
+            break
+        case '2012-2013':
+            clubGoals = 55; clubAssits = 12; nationGoals = 4 ; nationAssits = 2
+            trophies = []
+            awards = ['Ballon d\'Or', 'FIFPro World XI Appearances', 'La Liga Most Valuable Player (presented once)', 
+            'Champions League Top Scorer'
+        ]
+            linkYoutube = 'https://www.youtube.com/embed/NAb--RWvdSk'
+            break
+        case '2013-2014':
+            clubGoals = 51; clubAssits = 14; nationGoals = 11 ; nationAssits = 1
+            trophies = ['Champions League', 'Copa del Rey', 'UEFA SUPER CUP', 'Club World Cup']
+            awards = ['Ballon d\'Or', 'European Golden Shoe', 'FIFA Club World Cup Silver Ball', 'FIFPro World XI Appearances',
+            'La Liga Best Goal', 'Champions League Top Scorer', 'Pichichi'
+        ]
+            linkYoutube = 'https://www.youtube.com/embed/zFWGbROCpHk'
+            break
+        case '2014-2015':
+            clubGoals = 61; clubAssits = 21; nationGoals = 5 ; nationAssits = 0
+            trophies = []
+            awards = ['European Golden Shoe', 'FIFPro World XI Appearances', 'Champions League Top Scorer', 'Pichichi']
+            linkYoutube = 'https://www.youtube.com/embed/AzYljPn2g6E'
+            break
+        case '2015-2016':
+            clubGoals = 51; clubAssits = 15; nationGoals = 6 ; nationAssits = 2
+            trophies = ['Champions League', 'UEFA SUPER CUP', 'Club World Cup', 'UEFA European Championships']
+            awards = ['Ballon d\'Or', 'FIFA The Best', 'Marca Champions League No 1 Award', 'FIFA Club World Cup Golden Ball',
+            'FIFPro World XI Appearances', 'Champions League Top Scorer'
+        ]
+            linkYoutube = 'https://www.youtube.com/embed/0WhK4x7q19Q'
+            break
+        case '2016-2017':
+            clubGoals = 42; clubAssits = 11; nationGoals = 12 ; nationAssits = 2
+            trophies = ['Champions League', 'La Liga', 'UEFA SUPER CUP', 'Club World Cup']
+            awards = ['Ballon d\'Or', 'FIFA The Best', 'FIFA Club World Cup Silver Ball', 'FIFPro World XI Appearances', 
+            'Champions League Top Scorer', 'UEFA Best Forward in Europe'
+        ]
+            linkYoutube = 'https://www.youtube.com/embed/Vay7Cce_AeA'
+            break
+        case '2017-2018':
+            clubGoals = 44; clubAssits = 8; nationGoals = 10 ; nationAssits = 3
+            trophies = ['Champions League', 'Supercopa de España']
+            awards = ['FIFPro World XI Appearances', 'Champions League Top Scorer', 
+            'UEFA Best Forward in Europe']
+            linkYoutube = 'https://www.youtube.com/embed/6686NaytKGo'
+            break
+        case '2018-2019':
+            clubGoals = 28; clubAssits = 10; nationGoals = 11 ; nationAssits = 0
+            trophies = ['Serie A', 'UEFA Nations League', 'FIFPro World XI Appearances']
+            awards = ['Marca Leyenda', 'Serie A MVP', 'Serie A Footballer of the Year (AIC)', 'UEFA Nations League Finals Golden Boot']
+            linkYoutube = 'https://www.youtube.com/embed/vNW4r7-s6hs'
+            break
+        case '2019-2020':
+            clubGoals = 37; clubAssits = 5; nationGoals = 11 ; nationAssits = 0
+            trophies = ['Serie A', 'Supercoppa Italiana']
+            awards = ['Dubai Globe Soccer Awards Best Player of the Century', 
+            'FIFPro World XI Appearances', 'Serie A Footballer of the Year (AIC)', 'Ballon d\'Or Dream Team (one-off)']
+            linkYoutube = 'https://www.youtube.com/embed/DhU9bMMaLYw'
+            break
+        case '2020-2021':
+            clubGoals = 36; clubAssits = 5; nationGoals = 10 ; nationAssits = 2
+            trophies = ['Coppa Italia', 'Supercoppa Italiana']
+            awards = ['Dubai Globe Soccer Top Goal Scorer of All Time', 'Golden Foot', 'FIFPro World XI Appearances', 'Serie A Best Striker', 
+            'UEFA Euros Golden Boot', 'Serie A Top Scorer', 'FIFA The Best Special Award (for international goals record)'
+        ]
+            linkYoutube = 'https://www.youtube.com/embed/pMuoNqz-LK8'
+            break
+        case '2021-2022':
+            clubGoals = 24; clubAssits = 3; nationGoals = 10 ; nationAssits = 1
+            trophies = []
+            awards = ['FIFPro World XI Appearances']
+            linkYoutube = 'https://www.youtube.com/embed/hCYCz3g4rOQ'
+            break
+        case '2022-2023':
+            clubGoals = 12; clubAssits = 4; nationGoals = 1 ; nationAssits = 1
+            trophies = []
+            awards = []
+            linkYoutube = 'https://www.youtube.com/embed/CznydEBC4ic'
+            break
+        default:
+            break;
+    }
     const mu = ['2008-2009', '2021-2022']
     const alnassr = ['2022-2023']
     const juventus = ['2018-2019', '2019-2020', '2020-2021']
 
     if(mu.includes(season)) club = 'Manchester United'
-    else if (alnassr.includes(season)) club = 'Al-nassr'
+    else if (alnassr.includes(season)) club = 'Al-Nassr'
     else if (juventus.includes(season)) club = 'Juventus'
     else club = 'Real Madrid'
 
     return ({
+        // Header
         club: club,
         clubIcon: './assets/img/career/'  + season + '/club-icon.jpg',
         nationIcon: './assets/img/career/'  + season + '/nation-icon.jpg',
         headAvatar: './assets/img/career/'  + season + '/head-avatar.jpg',
+
+        // Achivement
+        clubGoals:clubGoals,
+        clubAssits:clubAssits,
+        nationGoals:nationGoals,
+        nationAssits:nationAssits,
+
+        trophies:trophies,
+        awards: awards,
+
+        linkYoutube: linkYoutube,
+    
         headFifa: './assets/img/career/'  + season + '/head-fifa.jpg',
         homeShirt: './assets/img/career/'  + season + '/home-shirt.jpg',
         awayShirt: './assets/img/career/'  + season + '/away-shirt.jpg',
@@ -332,21 +483,30 @@ function changeCareerContent(props = {}){
     />)
     
     careerMoment.render(<CareerMoment
-    
+        clubGoals={props.clubGoals}
+        clubAssits={props.clubAssits}
+        nationGoals={props.nationGoals}
+        nationAssits={props.nationAssits}
+
+        trophies= {props.trophies}
+        awards= {props.awards}
     />)
     
     careerVideo.render(<CareerVideo
+        linkYoutube={props.linkYoutube}
     />)
     
     clubShirts.render(<ClubShirts 
         linkHomeShirt= {props.homeShirt}
         linkAwayShirt = {props.awayShirt}
         linkThirdShirt = {props.thirdShirt}
+        club ={props.club}
     />)
     
     nationShirts.render(<NationShirts
         linkNationHomeShirt = {props.nationHome}
         linkNationAwayShirt = {props.nationAway}
+        club ={props.club}
     />)
 }
 

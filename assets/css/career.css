@@ -164,7 +164,9 @@
 }
 
 .titles-awards{
+    /* height: 100px; */
     height: 73%;
+    /* margin-bottom: 300px; */
 }
 
 .titles-awards h3 .icon{
