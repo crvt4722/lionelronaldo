@@ -35,12 +35,12 @@ var cnt = 1
 // The function to be controlled the slider with the next and prev buttons.
 function controlSlider(option){
     if(option == 'next'){
-        cnt = (cnt + 1)%9
+        cnt = (cnt + 1)%10
         if (cnt == 0) cnt = 1
     }
     else {
-        cnt = (cnt - 1)%9
-        if (cnt == 0) cnt = 8
+        cnt = (cnt - 1)%10
+        if (cnt == 0) cnt = 9
     }
     let path = './assets/img/rosi' +cnt +'.jpg'
     sliderImg.src = path
