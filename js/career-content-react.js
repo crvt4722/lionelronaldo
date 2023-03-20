@@ -6,6 +6,7 @@ function showModal(){
 
 function Header({
     //Header
+    seasonHeader = '2008/09',
     linkAvaHead = "./assets/img/career/2008-2009/head-avatar.jpg", 
     nation = 'Portugal',
     club = 'Manchester United',
@@ -19,6 +20,7 @@ function Header({
             <div className="nation-club">
                 <p><img src= {linkNationIcon} alt=""/> Nation: {nation}</p>
                 <p><img src= {linkClubIcon} alt=""/> Club: {club}</p>
+                <p><img src= './assets/img/season-header-icon.jpg' alt=""/> Season: {seasonHeader}</p>
             </div>
             <img src= {linkFifaHead} className="fifa-card right"/>
         </>
@@ -26,20 +28,13 @@ function Header({
 }
 
 function CareerMoment({
-    linkImgMoment1 = "./assets/img/career/2008-2009/moment1.jpg",
-    linkImgMoment2 = "./assets/img/career/2008-2009/moment2.jpg",
-    linkImgMoment3 = "./assets/img/career/2008-2009/moment3.jpg", 
-    linkImgMoment4 = "./assets/img/career/2008-2009/moment4.jpg",
-    descMoment1 = "Cristiano Ronaldo 2008/09",
-    descMoment2 = 'His first Champions League title',
-    descMoment3 = `Also his first Balon d'Or`,
-    descMoment4 = 'Cristiano Ronaldo 2008/09',
-
     moments = [
-        ["./assets/img/career/2008-2009/moment1.jpg", "Cristiano Ronaldo 2008/09"],
-        ["./assets/img/career/2008-2009/moment2.jpg", 'His first Champions League title'],
-        ["./assets/img/career/2008-2009/moment3.jpg", 'Also his first Balon d\'Or'],
-        ["./assets/img/career/2008-2009/moment4.jpg", "Cristiano Ronaldo 2008/09"]
+        "./assets/img/career/2008-2009/moment1.jpg",
+        "./assets/img/career/2008-2009/moment2.jpg",
+        "./assets/img/career/2008-2009/moment3.jpg",
+        "./assets/img/career/2008-2009/moment4.jpg",
+        "./assets/img/career/2008-2009/moment5.jpg",
+        "./assets/img/career/2008-2009/moment6.jpg"
     ],
     
     // Achivement
@@ -73,7 +68,15 @@ function CareerMoment({
                         <h3><i className="fa-solid fa-trophy"></i> TROPHIES <i className="fa-sharp fa-solid fa-trophy"></i></h3>
                         
                         {trophies.map((trophy, index) => {
-                            return <h3 key = {index}><span className="icon c1"></span>{trophy}</h3>
+                            // return <h3 key = {index}><span className="icon cominityshield"></span>{trophy}</h3>
+                            if(trophy =='Champions League') return <h3 key = {index}><span className="icon c1"></span>{trophy}</h3>
+                            if(trophy == 'Premier League') return <h3 key = {index}><span className="icon nha"></span>{trophy}</h3>
+                            if(trophy == 'La Liga') return <h3 key = {index}><span className="icon laliga"></span>{trophy}</h3>
+                            
+                            const randomCup = Math.floor(Math.random()*2)
+
+                            if (randomCup == 0) return <h3 key = {index}><span className="icon comunityshield"></span>{trophy}</h3>
+                            return <h3 key = {index}><span className="icon ffclubwc"></span>{trophy}</h3>
                         })}
 
                         {/* <h3><span className="icon nha"></span>Premier League</h3>
@@ -88,7 +91,17 @@ function CareerMoment({
                         
                         {
                             awards.map((award,index) => {
-                                return <h3 key = {index}><span className="icon goldenshoe"></span>{award}</h3>
+                                if ( award == "Ballon d'Or") return <h3 key = {index}><span className="icon balondor"></span>{award}</h3>
+                                if(award.includes('Golden Shoe')) return <h3 key = {index}><span className="icon goldenshoe"></span>{award}</h3> 
+                                if(award.includes('Golden Boot') || award.includes('Top Sco'))
+                                    return <h3 key = {index}><span className="icon goldenboot"></span>{award}</h3> 
+                                
+                                if(award.includes('Serie')) return <h3 key = {index}><span className="icon seriea"></span>{award}</h3> 
+
+                                const randomAward= Math.floor(Math.random()*2)
+
+                                if (randomAward == 0) return <h3 key = {index}><span className="icon goldmedal"></span>{award}</h3>
+                                return <h3 key = {index}><span className="icon ffthebest"></span>{award}</h3>
                             })
                         }
                     </div>
@@ -98,25 +111,9 @@ function CareerMoment({
             <div className="moment">
                 {
                     moments.map((moment, index)=>{
-                        return (
-                            
-                            <img key = {index} src= {moment[0]} alt=""/>
-                            
-                            
-                        )
+                        return <img key = {index} src= {moment} alt=""/>
                     })
                 }
-                {/* <img src= {linkImgMoment1} alt=""/>
-                <p>{descMoment1}</p>
-
-                <img src={linkImgMoment2} alt=""/>
-                <p>{descMoment2}</p>
-
-                <img src={linkImgMoment3} alt=""/>
-                <p>{descMoment3}</p>
-
-                <img src={linkImgMoment4} alt=""/>
-                <p>{descMoment4} </p> */}
             </div>
         
         </>
@@ -326,10 +323,18 @@ function NationShirts({
 
 
 function getLinkImageInSeason(season = '2008-2009'){
+    let seasonHeader = season.slice(0,4) + '/' + season.slice(7)
     let club = ''
     let linkYoutube = ''
     let clubGoals, clubAssits, nationGoals, nationAssits
     let trophies = [], awards = []
+    let descYoutube = 'Cristiano Ronaldo Hightlights ' + season
+    let moments = []
+
+
+    for (let i = 1; i<=6;++i) {
+        moments.push("./assets/img/career/"+season+'/moment'+i+'.jpg')
+    }
 
     switch (season) {
         case '2008-2009':
@@ -359,7 +364,7 @@ function getLinkImageInSeason(season = '2008-2009'){
         case '2012-2013':
             clubGoals = 55; clubAssits = 12; nationGoals = 4 ; nationAssits = 2
             trophies = []
-            awards = ['Ballon d\'Or', 'FIFPro World XI Appearances', 'La Liga Most Valuable Player (presented once)', 
+            awards = ['FIFPro World XI Appearances', 'La Liga Most Valuable Player (presented once)', 
             'Champions League Top Scorer'
         ]
             linkYoutube = 'https://www.youtube.com/embed/NAb--RWvdSk'
@@ -448,6 +453,7 @@ function getLinkImageInSeason(season = '2008-2009'){
 
     return ({
         // Header
+        seasonHeader:seasonHeader,
         club: club,
         clubIcon: './assets/img/career/'  + season + '/club-icon.jpg',
         nationIcon: './assets/img/career/'  + season + '/nation-icon.jpg',
@@ -462,7 +468,10 @@ function getLinkImageInSeason(season = '2008-2009'){
         trophies:trophies,
         awards: awards,
 
+        moments:moments,
+
         linkYoutube: linkYoutube,
+        descYoutube: descYoutube,
     
         headFifa: './assets/img/career/'  + season + '/head-fifa.jpg',
         homeShirt: './assets/img/career/'  + season + '/home-shirt.jpg',
@@ -475,6 +484,7 @@ function getLinkImageInSeason(season = '2008-2009'){
 
 function changeCareerContent(props = {}){
     careerHead.render(<Header
+        seasonHeader={props.seasonHeader}
         club= {props.club}
         linkAvaHead={props.headAvatar}
         linkFifaHead = {props.headFifa}
@@ -490,10 +500,13 @@ function changeCareerContent(props = {}){
 
         trophies= {props.trophies}
         awards= {props.awards}
+
+        moments={props.moments}
     />)
     
     careerVideo.render(<CareerVideo
         linkYoutube={props.linkYoutube}
+        descYoutube = {props.descYoutube}
     />)
     
     clubShirts.render(<ClubShirts 

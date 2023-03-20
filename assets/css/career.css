@@ -192,6 +192,11 @@
     background-image: url('../img/career/icon-award-trophy/cup-comunityshield-icon.jpg');
 }
 
+.titles-awards .titles h3 .laliga{
+    background-image: url('../img/career/icon-award-trophy/cup-laliga.jpg');
+}
+
+
 
 .titles-awards .awards h3 .balondor{
     background-image: url('../img/career/icon-award-trophy/balondor-icon.jpg');
@@ -203,6 +208,18 @@
 
 .titles-awards .awards h3 .goldmedal{
     background-image: url('../img/career/icon-award-trophy/goldmedal-icon.jpg');
+}
+
+.titles-awards .awards h3 .ffthebest{
+    background-image: url('../img/career/icon-award-trophy/cup-fifa-the-best.jpg');
+}
+
+.titles-awards .awards h3 .goldenboot{
+    background-image: url('../img/career/icon-award-trophy/goldenboot.jfif');
+}
+
+.titles-awards .awards h3 .seriea{
+    background-image: url('../img/career/icon-award-trophy/seriea.jpg');
 }
 
 .goals-assits{
