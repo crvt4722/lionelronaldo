@@ -7,7 +7,9 @@
     <title>Toi Cr</title>
 
     <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/vote.css">
     <link rel="stylesheet" href="./assets/css/comunity.css">
+
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/base.css">
     <link rel="stylesheet" type="text/css"  type="text/css"href="./assets/css/main.css">
@@ -26,43 +28,27 @@
     <div class="header" w3-include-html="./includes/header.html"></div>
 
     <div class="container">
-        <div class="chat-box">
-            <ul class="message-box">
-                <li>Tới Cr: Hí anh em!</li>
-                <li>Minh Cr: Hí anh em!</li>
-                <li>Leo Nguyễn: Hí anh em!</li>
-                <li>Hoàng Óc Bò: Hí anh em!</li>
-                <li>Võ Tòng đả hổ: Hí anh em!</li>
-                <li>Đỗ thánh: Hí anh em!</li>
-                <li>Kiên Jr: Hí anh em!</li>
-                <li>Leo Cr: Hí anh em!</li>
-                <li>Hoàng Cr: Hí anh em!</li>
-                <li>Hoàng Cr: Hí anh em!</li>
-                <li>Hoàng Cr: Hí anh em!</li>
-                <li>Hoàng Cr: Hí anh em!</li>
-                <li>Hoàng Cr: Hí anh em!</li>
-                <li>Hoàng Cr: Hí anh em!</li>
-                <li>Hoàng Cr: Hí anh em!</li>
-                <li>Hoàng Cr: Hí anh em!</li>
-                <li>Hoàng Cr: Hí anh em!</li>
-                
-            </ul>
-
-            <form    class="message-form" action="\" method="post">
-                <div class="input-form">
-                    <label for="name">Tên hiển thị</label>
-                    <input id = 'name' type="text" name="name-shown">
-                </div>
-
-                <div class="input-form">
-                    <label for="message-content">Nội dung</label>
-                    <input id = 'message-content'type="text" name="message">
-
-                    <button type="submit">Gửi</button>
-                </div>
-            </form>
+        <div class="items">
+            <div class="control prev"><i class="fa-sharp fa-solid fa-chevron-left"></i></i></div>
+            <div class="item first">
+                <img src="./assets/img/career/2008-2009/head-avatar.jpg" alt="">
+                <input type="radio" name="player" id="first-section" value="Cristiano Ronaldo">
+                <label for="first-section">Cristiano Ronaldo</label>
+            </div>
+    
+            <div class="item second">
+                <img src="./assets/img/career/2017-2018/head-avatar.jpg" alt="">
+                <input type="radio" name="player" id ="second-section" style="font-size: 20px;">
+                <label for="second-section">Cristiano Ronaldo</label>
+            </div>
+    
+            <div class="item third">
+                <img src="./assets/img/career/2022-2023/head-avatar.jpg" alt="">
+                <input type="radio" name="player" id = "third-section">
+                <label for="third-section">Cristiano Ronaldo</label>
+            </div>
+            <div class="control next"><i class="fa-sharp fa-solid fa-chevron-right"></i></div>
         </div>
-
     </div>
 
     <footer class="footer-distributed" w3-include-html="./includes/footer.html"> </footer>
