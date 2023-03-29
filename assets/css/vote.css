@@ -2,7 +2,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
+
+.container .slogan{
+    height: 20%;
+    font-size: 20px;
+    /* align-items: first baseline; */
+    transform: translateY(-20%);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.container .slogan:hover{
+    color: yellow;
+}
+
 
 .items{
     width: 100%;
@@ -70,4 +84,13 @@
 .items .control:hover{
     opacity: 0.8;
     color: white;
+}
+
+.container button{
+    font-size: 16px;
+    padding: 10px 10px;
+    /* color: black; */
+    font-weight: bold;
+    border-radius: 5px;
+    transform: translateY(50%);
 }

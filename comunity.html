@@ -26,7 +26,20 @@
     <div class="header" w3-include-html="./includes/header.html"></div>
 
     <div class="container">
+
         <div class="chat-box">
+            <!-- <label for="">Send to: </label> -->
+            <div class="receiver-section">
+                <label for="">Gửi tới: </label>
+                <select>
+                    <option value="everyone">Everyone</option>
+                    <option value="ronaldo">Ronaldo</option>
+                    <option value="messi">Messi</option>
+                    <option value="benzema">Benzema</option>
+                    <option value="neymar">Neymar</option>
+                </select>
+            </div>
+
             <ul class="message-box">
                 <li>Tới Cr: Hí anh em!</li>
                 <li>Minh Cr: Hí anh em!</li>
@@ -56,7 +69,7 @@
 
                 <div class="input-form">
                     <label for="message-content">Nội dung</label>
-                    <input id = 'message-content'type="text" name="message">
+                    <input id = 'message-content' type="text" name="message">
 
                     <button type="submit">Gửi</button>
                 </div>
