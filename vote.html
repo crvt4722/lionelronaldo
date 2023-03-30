@@ -33,45 +33,35 @@
         </div>
 
         <div class="items">
-            <div class="control prev"><i class="fa-sharp fa-solid fa-chevron-left"></i></i></div>
+            <div class="control prev" onclick = handleControllPrev()><i class="fa-sharp fa-solid fa-chevron-left"></i></i></div>
             <div class="item first">
-                <img src="./assets/img/career/2008-2009/head-avatar.jpg" alt="">
-                <input type="radio" name="player" id="first-section" value="messi">
-                <label for="first-section">Cristiano Ronaldo</label>
+                <img src="./assets/img/vote/ronaldo.jpg" alt="">
+                <input type="radio" name="player" id="first-section" value="Ronaldo">
+                <label for="first-section">Ronaldo</label>
             </div>
     
             <div class="item second">
-                <img src="./assets/img/career/2017-2018/head-avatar.jpg" alt="">
-                <input type="radio" name="player" id ="second-section" style="font-size: 20px;" value = 'ronaldo'>
-                <label for="second-section">Cristiano Ronaldo</label>
+                <img src="./assets/img/vote/messi.jpg" alt="">
+                <input type="radio" name="player" id ="second-section" style="font-size: 20px;" value = 'Messi'>
+                <label for="second-section">Messi</label>
             </div>
     
             <div class="item third">
-                <img src="./assets/img/career/2022-2023/head-avatar.jpg" alt="">
-                <input type="radio" name="player" id = "third-section" value = 'neymar'>
-                <label for="third-section">Cristiano Ronaldo</label>
+                <img src="./assets/img/vote/maguire.jpg" alt="">
+                <input type="radio" name="player" id = "third-section" value = 'Maguire'>
+                <label for="third-section">Maguire</label>
             </div>
-            <div class="control next"><i class="fa-sharp fa-solid fa-chevron-right"></i></div>
+            <div class="control next" onclick = hanldeControlNext()><i class="fa-sharp fa-solid fa-chevron-right"></i></div>
         </div>
 
-        <button onclick = submitSection()>Statistics</button>
+        <div class="btn">
+            <button onclick = submitSection()>Submit</button>
+            <button><a href="testchart.html">Statistics</a></button>
+        </div>
     </div>
 
     <footer class="footer-distributed" w3-include-html="./includes/footer.html"> </footer>
-    <script>
-        // let userInput = prompt('Type your username: ')
-        let userInput = 'ok'
-        if (userInput){
-            function submitSection(){
-                let players = document.getElementsByName('player')
-                for (let player of players){
-                    if(player.checked){
-                        alert(player.value)
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="js/vote.js"></script>
     <script>
         includeHTML();
     </script>
