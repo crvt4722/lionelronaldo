@@ -33,19 +33,35 @@
         </div>
 
         <div class="items">
-            
+            <div class="control prev" onclick = handleControllPrev()><i class="fa-sharp fa-solid fa-chevron-left"></i></i></div>
+            <div class="item first">
+                <img src="./assets/img/vote/ronaldo.jpg" alt="">
+                <input type="radio" name="player" id="first-section" value="Ronaldo">
+                <label for="first-section">Ronaldo</label>
+            </div>
+    
+            <div class="item second">
+                <img src="./assets/img/vote/messi.jpg" alt="">
+                <input type="radio" name="player" id ="second-section" style="font-size: 20px;" value = 'Messi'>
+                <label for="second-section">Messi</label>
+            </div>
+    
+            <div class="item third">
+                <img src="./assets/img/vote/maguire.jpg" alt="">
+                <input type="radio" name="player" id = "third-section" value = 'Maguire'>
+                <label for="third-section">Maguire</label>
+            </div>
+            <div class="control next" onclick = hanldeControlNext()><i class="fa-sharp fa-solid fa-chevron-right"></i></div>
         </div>
 
         <div class="btn">
             <button onclick = submitSection()>Submit</button>
-            <button onclick = analysChart()>Statistics</button>
+            <button><a href="testchart.html">Statistics</a></button>
         </div>
     </div>
 
     <footer class="footer-distributed" w3-include-html="./includes/footer.html"> </footer>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <script type="text/babel" src="js/vote-react.js"> </script>
+    <script src="js/vote.js"></script>
     <script>
         includeHTML();
     </script>

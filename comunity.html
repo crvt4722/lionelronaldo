@@ -80,11 +80,16 @@
 
     <footer class="footer-distributed" w3-include-html="./includes/footer.html"> </footer>
     <script>
+        function updateScroll(){
+            const messageBox = document.querySelector('.message-box')
+            messageBox.scrollTop = messageBox.scrollHeight
+        }
+        updateScroll()
+
         const messageForm = document.querySelector('.message-form')
         messageForm.addEventListener('submit', (e) =>{
             e.preventDefault()
-            const messageBox = document.querySelector('.message-box')
-            messageBox.scrollTop = messageBox.scrollHeight
+            updateScroll()
         })
     </script>
     <script>

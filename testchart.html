@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <style>
-    div{
+    #myChart{
         width: 80%;
         margin: 0 auto;
         padding-top: 4rem;
@@ -16,7 +16,6 @@
 <body>
     <div>
         <canvas id="myChart"></canvas>
-        <canvas id="pieChart"></canvas>
     </div>
       
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -24,15 +23,6 @@
       <script>
         const ctx = document.getElementById('myChart');
         
-        let xhr = new XMLHttpRequest()
-        xhr.open('POST', 'ProcessChartData', true)
-        xhr.onreadystatechange = function(){
-            if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200){
-                console.log(xhr.responseText)
-            }
-        }
-
-
         const labels = ['Lionel Messi', 'Cristiano Ronaldo', 'Neymar Jr'];
         const data = {
         labels: labels,
@@ -72,12 +62,6 @@
             },
         };
 
-        /*const pieChart = {
-            type: 'pie',
-            data:data
-        }
-        
-        new Chart(document.getElementById('pieChart'), pieChart)*/
 
         new Chart(ctx, config);
       </script>
