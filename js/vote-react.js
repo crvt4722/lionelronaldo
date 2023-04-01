@@ -1,4 +1,5 @@
 var index = 0
+
 function Slider(){
 
     let arr = ['Ronaldo', 'Messi', 'Maguire', 'Benzema', 'Neymar', 'Mbappe']
@@ -117,6 +118,40 @@ const root = ReactDOM.createRoot(document.querySelector('.items'))
 root.render(<Slider/>)
 function submitSection(){
     root.render(<Slider/>)
+    let userInput = prompt('Type your username: ')
+        if (userInput){
+            function test(){
+                let players = document.getElementsByName('player')
+                for (let player of players){
+                    if(player.checked){
+                        let data = JSON.stringify({"userName": userInput, "idol": player.value})
+
+                        let xhr = new XMLHttpRequest()
+                        xhr.open('POST', 'ProcessReceiveVote', true)
+                        xhr.setRequestHeader('Content-Type', 'application/json')
+                        xhr.onreadystatechange = function() {
+                            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                              // X? lý ph?n h?i t? Servlet ho?c x? lý d? li?u trên trang ? ?ây
+                                console.log('1111')
+                                
+                                let resultObject = JSON.parse(xhr.responseText)
+                                console.log(resultObject)
+                                
+                                for (let player in resultObject){
+                                    localStorage.setItem(player, resultObject[player])
+                                }
+                            }
+                          };
+
+                        xhr.send(data)
+                        break
+                    }
+                }
+                
+                alert("Sucessfully!")
+            }
+            test()
+        }
 }
 function analysChart(){
     root.render(<BarChart/>)
