@@ -1,35 +1,3 @@
-'use strict'
-// Header fixed.
-let header = document.getElementById('header')
-header.style = `position: fixed;`
-
-// Navigator stop
-let navigatorItems = document.querySelector('.main-menu__items')
-navigatorItems.style = `animation: none;`
-
-// Side bar.
-
-/*let sidebarSeason = document.querySelector('.text')
-let sidebarSeasonYear = document.querySelector('.sidebar__seasons')
-var cnt = 1;
-
-function showOrHideSeasons(){
-    if (cnt == 1){
-        sidebarSeasonYear.style = `display: inline;`
-        cnt = 2
-    }
-    else {
-        sidebarSeasonYear.style = `display: none;`
-        cnt = 1
-    }
-}
-
-sidebarSeason.addEventListener('click', showOrHideSeasons) */
-
-// Modal 
-
-const buyBtns = document.querySelectorAll('.buy-btn')
-
 const modal = document.querySelector('.modal')
 const modalLogin = document.querySelector('.modal.login')
 const modalSignup = document.querySelector('.modal.signup')
@@ -60,9 +28,6 @@ modalCloseSignup.addEventListener('click', hideModal.bind(this, modalSignup))
 
 modalClose.addEventListener('click', hideModal.bind(this, modal))
 
-for (let buyBtn of buyBtns){
-    buyBtn.addEventListener('click', showModal.bind(this,modal))
-}
 
 modalSignup.addEventListener('click', hideModal.bind(this,modalSignup))
 modalLogin.addEventListener('click', hideModal.bind(this,modalLogin))

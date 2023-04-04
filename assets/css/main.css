@@ -83,6 +83,7 @@ html{
     position: relative;
     background-color: white;
     display: flex;
+    z-index: 10;
 }
 
 .main-menu .main-menu__items{
@@ -265,3 +266,6 @@ html{
     right: 48.5%;
 }
 
+.login-btn{
+    cursor: pointer;
+}

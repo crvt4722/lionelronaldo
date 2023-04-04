@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/css/footer.css">
     <link rel="stylesheet" href="./assets/css/vote.css">
     <link rel="stylesheet" href="./assets/css/comunity.css">
+    <link rel="stylesheet" href="./assets/css/modal.css">
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/base.css">
@@ -43,11 +44,13 @@
     </div>
 
     <footer class="footer-distributed" w3-include-html="./includes/footer.html"> </footer>
+    <div w3-include-html="./includes/modal.html"></div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script type="text/babel" src="js/vote-react.js"> </script>
     <script>
         includeHTML();
+        setTimeout(addModalJs, 1000);
     </script>
 </body>
 </html>

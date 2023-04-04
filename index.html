@@ -43,6 +43,8 @@
     <title>Toi Cr</title>
 
     <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/modal.css">
+
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/base.css">
     <link rel="stylesheet" type="text/css"  type="text/css"href="./assets/css/main.css">
@@ -69,9 +71,11 @@
     </div>
 
     <footer class="footer-distributed" w3-include-html="./includes/footer.html"> </footer>
+    <div w3-include-html="./includes/modal.html"></div>
     <script src="./js/main.js"> </script>
     <script>
         includeHTML();
+        setTimeout(addModalJs, 1000);
     </script>
 </body>
 </html>
