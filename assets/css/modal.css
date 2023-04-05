@@ -46,7 +46,11 @@
     font-weight: 900;
 }
 
-.modal-close,.modal-close__login:hover{
+.modal-close:hover{
+    background-color: red;
+    color:white;
+}
+.modal-close__login:hover{
     background-color: red;
     color:white;
 }
@@ -124,7 +128,7 @@
 
 .modal-content{
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 10px;
     color:black;
     font-weight: bold;
     font-size: 15px;
@@ -232,4 +236,12 @@
 
 .modal-social__google{
     background-image: linear-gradient(to bottom, #dd4e41, #c9453a);
+}
+
+.alert-danger, .alert-danger__login, .alert-danger__signup{
+    padding-top: 5px;
+    color:red;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
 }

@@ -10,6 +10,8 @@
             
         </div>
 
+        <div class="alert-danger">Invalid email. Try again!</div>
+
         <div class="modal-content">
 
             <div class="label-container">
@@ -71,11 +73,14 @@
             <label for="" class="login-label">Sign in</label>
             <label for="" class="signup-label">Sign up</label>
         </div>
+
+        <div class="alert-danger__login">Invalid email. Try again!</div>
+
         <div class="modal-content">
             
             <div class="label-container">
-                <label for="username__login" class="modal-label" >
-                    <i class="fa-solid fa-user"></i></i> Username: 
+                <label for="email__login" class="modal-label">
+                    <i class="fa-solid fa-envelope"></i> Email: 
                 </label>
 
                 <label for="password__login" class="modal-label">
@@ -86,7 +91,7 @@
             </div>
 
             <div class="input-container">
-                <input id='username__login' type="text" required placeholder="">
+                <input id='email__login' type="text" required placeholder="">
                 <input id='password__login' type='text' required>
                 
             </div>    
@@ -130,11 +135,18 @@
             <label for="" class="login-label">Sign in</label>
             <label for="" class="signup-label">Sign up</label>
         </div>
+
+        <div class="alert-danger__signup">Invalid email. Try again!</div>
+
         <div class="modal-content">
             
             <div class="label-container">
-                <label for="username__singup" class="modal-label" >
-                    <i class="fa-solid fa-user"></i> Username: 
+                
+                <label for="fullname__singup" class="modal-label" >
+                    <i class="fa-solid fa-user"></i> Fullname: 
+                </label>
+                <label for="email__signup" class="modal-label">
+                    <i class="fa-solid fa-envelope"></i> Email: 
                 </label>
 
                 <label for="password__signup" class="modal-label">
@@ -145,18 +157,15 @@
                     <i class="fa-solid fa-key"></i> Re-password: 
                 </label>
 
-                <label for="password__signup" class="modal-label">
-                    <i class="fa-solid fa-envelope"></i> Email: 
-                </label>
 
                 
             </div>
 
             <div class="input-container">
-                <input id='username__signup' type="text" required placeholder="">
+                <input id='fullname__signup' type="text" required placeholder="">
+                <input id='email__signup' type='text' required>
                 <input id='password__signup' type='text' required>
                 <input id='repassword__signup' type='text' required>
-                <input id='email__signup' type='text' required>
                 
             </div>    
             <button type="submit" class="modal-submit-btn">Sign up</button>
