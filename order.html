@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toi Cr</title>
+
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/order.css">
+    <!-- <link rel="stylesheet" href="./assets/css/vote.css"> -->
+    <link rel="stylesheet" href="./assets/css/comunity.css">
+    <link rel="stylesheet" href="./assets/css/modal.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/base.css">
+    <link rel="stylesheet" type="text/css"  type="text/css"href="./assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="./assets/fonts/fontawesome-free-6.3.0-web/css/all.min.css">
+
+    <link rel="icon" href="./assets/img/logo.jpg" type="image/x-icon" />
+
+    <!-- ReactJs -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script src="./includes/include.js"></script>
+</head>
+<body>
+    <div class="header" w3-include-html="./includes/header.html"></div>
+
+    <div class="container">
+
+        <!-- <div class="shirt">
+            <div class="shirt-image"></div>
+            <div class="club text">Manchester United</div>
+            <div class="desc text">2008/09 Home</div>
+            <div class="more-info-btn">More Information</div>
+        </div> -->
+
+    </div>
+
+    <footer class="footer-distributed" w3-include-html="./includes/footer.html"> </footer>
+    
+    <div class="modal order-info">
+        
+        <div class="modal-container">
+            <div class="modal-header">
+                <i class="modal-close fa-solid fa-xmark"></i>
+                <div class="modal__web-name">
+                    
+                    <h3>    <span class="modal-header__span1">Lionel</span><span class="modal-header__span2">Ronaldo</span></h3>
+                    <p>Be served you is our honor!</p>
+                </div>
+                
+            </div>
+    
+    
+            <div class="modal-content">
+    
+                <div class="label-container">
+    
+                    <label for="modal__phone" class="modal-label">
+                        <i class="fa-sharp fa-solid fa-phone"></i> Phone: 
+                    </label>
+    
+                    <label for="modal__address" class="modal-label">
+                        <i class="fa-sharp fa-solid fa-location-dot"></i> Address:
+                    </label>
+    
+                    <label for="" class="modal-label">
+                        <i class="fa-sharp fa-solid fa-shirt"></i> Size:
+                    </label>
+                    
+                    <label for="modal__quantity" class="modal-label" style="transform:translateY(-3px)">
+                        <i class="fa-sharp fa-solid fa-cart-plus"></i> Quantity:
+                    </label> 
+    
+                    <label for="modal__payment-method" class="modal-label" >
+                        <i class="fa-solid fa-money-check-dollar"></i> Payment method: 
+                    </label>
+                </div>
+    
+                <div class="input-container">
+                    <label class="phone-info">0356368539</label>
+                    <label class="address-info">Văn Quán, Hà Đông</label>
+                    <label class="size-info">S</label>
+                    <label class="quantity-info">100</label>
+                    <label class="payment-method-info">LionelRonaldoPay</label>
+                </div>    
+                <button type="submit" class="cancel-order-btn modal-submit-btn">Cancel Order</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function hideModal(){
+            document.querySelector('.order-info').classList.remove('open')
+        }
+        const modalClose = document.querySelector('.order-info .modal-close')
+        modalClose.addEventListener('click', hideModal)
+
+        const cancelOrderBtn = document.querySelector('.cancel-order-btn')
+        cancelOrderBtn.addEventListener('click', ()=>{
+            let answer = confirm('Are you sure to cancel your order?')
+            console.log(answer)
+            if(answer == true){
+                alert('Successfully!')
+                hideModal()
+            }
+        })
+    </script>
+    <script>
+        includeHTML();
+    </script>
+
+    <script type="text/babel" src="js/order-react.js"></script>
+</body>
+</html>

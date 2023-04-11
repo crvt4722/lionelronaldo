@@ -2,7 +2,7 @@ var index = 0
 
 function Slider(){
 
-    let arr = ['Ronaldo', 'Messi', 'Maguire', 'Benzema', 'Neymar', 'Mbappe']
+    let arr = ['Ronaldo', 'Messi', 'Maguire', 'Benzema', 'Neymar', 'Mbappe', 'Modric', 'Bale', 'Muller', 'Lewandowski']
     let arrLength = arr.length
 
     let [firstImage, setFirstImage] = React.useState("./assets/img/vote/ronaldo.jpg")
@@ -14,7 +14,7 @@ function Slider(){
     let [thirdLabel, setThirdLabel] = React.useState('Maguire')
 
     function changeImage(){
-        if(index == 7) index = 0
+        if(index == arrLength) index = 0
         if(index == -1) index = arrLength -1
 
         let first = arr[index%arrLength]

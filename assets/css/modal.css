@@ -162,11 +162,12 @@
     width: 65%;
 }
 
-.modal-content .input-container input{
+.modal-content .input-container input, .modal-content .input-container select, .modal-content .input-container label{
     padding: 3px 0;
-    margin: 5px 0;
+    margin: 5.5px 0;
     border-radius: 10px;
     border: 2px solid #ccc;
+    overflow: auto;
 }
 
 .input-container .modal__radio-btn{

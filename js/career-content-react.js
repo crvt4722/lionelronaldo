@@ -1,7 +1,21 @@
 // Add function to buy button.
-function showModal(){
+function showModal(e){
+    if(e.target.className == 'fa-sharp fa-solid fa-cart-shopping') return
     var modal = document.querySelector('.modal')
     modal.classList.add('open')
+
+    localStorage.removeItem("orderShirtType")
+    localStorage.removeItem("club")
+    localStorage.removeItem("season")
+
+    let shirtType = e.target.className
+    shirtType = shirtType.split(" ")[1]
+    localStorage.setItem("orderShirtType", shirtType)
+    localStorage.setItem("club", document.querySelector('.club.text').textContent)
+    localStorage.setItem("season", document.querySelector('.desc.text').textContent.split(" ")[0])
+
+    console.log(document.querySelector('.club.text').textContent)
+    console.log(document.querySelector('.desc.text').textContent)
 }
 
 function Header({
@@ -134,7 +148,7 @@ function CareerVideo({
 }
 
 function ClubShirts({
-    club = 'Real Madrid',
+    club = 'Manchester United',
     nation = 'Portugal',
     // Shirts
     season = '2008/09',
@@ -216,7 +230,7 @@ function ClubShirts({
                     ></div>
                 <div className="club text">{club}</div>
                 <div className="desc text">{season} Home</div>
-                <div className="buy-btn" onClick = {showModal}>Buy <i className="fa-sharp fa-solid fa-cart-shopping" ></i></div>
+                <div className="buy-btn home-shirt.jpg" onClick = {showModal}>Buy <i className="fa-sharp fa-solid fa-cart-shopping" ></i></div>
             </div>
             
             <div className="shirt club-shirt-away">
@@ -227,7 +241,7 @@ function ClubShirts({
                 ></div>
                 <div className="club text">{club}</div>
                 <div className="desc text">{season} Away</div>
-                <div className="buy-btn" onClick = {showModal}>Buy <i className="fa-sharp fa-solid fa-cart-shopping" ></i></div>
+                <div className="buy-btn away-shirt.jpg" onClick = {showModal}>Buy <i className="fa-sharp fa-solid fa-cart-shopping" ></i></div>
             </div>
 
             <div className="shirt club-shirt-third">
@@ -238,14 +252,14 @@ function ClubShirts({
                 ></div>
                 <div className="club text">{club}</div>
                 <div className="desc text">{season} Third</div>
-                <div className="buy-btn" onClick = {showModal}>Buy <i className="fa-sharp fa-solid fa-cart-shopping" ></i></div>
+                <div className="buy-btn third-shirt.jpg" onClick = {showModal}>Buy <i className="fa-sharp fa-solid fa-cart-shopping" ></i></div>
             </div>
         </>
     )
 }
 
 function NationShirts({
-    club = 'Real Madrid',
+    club = 'Manchester United',
     nation = 'Portugal',
     season = '2008/09',
 
@@ -304,7 +318,7 @@ function NationShirts({
                 ></div>
                 <div className="club text">{nation}</div>
                 <div className="desc text">{season} Home</div>
-                <div className="buy-btn" onClick = {showModal}>Buy <i className="fa-sharp fa-solid fa-cart-shopping"></i></div>
+                <div className="buy-btn nation-home.jpg" onClick = {showModal}>Buy <i className="fa-sharp fa-solid fa-cart-shopping"></i></div>
             </div>
             
             <div className="shirt nation-shirt-away">
@@ -315,7 +329,7 @@ function NationShirts({
                 ></div>
                 <div className="club text">{nation}</div>
                 <div className="desc text">{season} Away</div>
-                <div className="buy-btn" onClick = {showModal}>Buy <i className="fa-sharp fa-solid fa-cart-shopping"></i></div>
+                <div className="buy-btn nation-away.jpg" onClick = {showModal}>Buy <i className="fa-sharp fa-solid fa-cart-shopping"></i></div>
             </div>
         </>
     )
@@ -513,12 +527,16 @@ function changeCareerContent(props = {}){
         linkHomeShirt= {props.homeShirt}
         linkAwayShirt = {props.awayShirt}
         linkThirdShirt = {props.thirdShirt}
+        nation={props.nation}
+        season={props.seasonHeader}
         club ={props.club}
     />)
     
     nationShirts.render(<NationShirts
         linkNationHomeShirt = {props.nationHome}
         linkNationAwayShirt = {props.nationAway}
+        nation={props.nation}
+        season={props.seasonHeader}
         club ={props.club}
     />)
 }
