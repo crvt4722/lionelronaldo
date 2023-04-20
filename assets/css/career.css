@@ -22,15 +22,45 @@
     padding: 10.65px 0 10.65px 0;
 }
 
+.sidebar select{
+    padding: 8px;
+}
+
+.sidebar select option{
+    background-color: #ccc;
+    border: none;
+}
+
 .sidebar li:hover{
     opacity: 0.5;
     background-color: white;
 }
 
+.sidebar select:hover{
+    opacity: 0.5;
+    background-color: white;
+}
+
+.sidebar .sidebar__introduce{
+    background-color: #ccc;
+    border: none;
+    text-align: center;
+    width: 100%;
+    -webkit-appearance: none;
+    z-index: 0;
+    /* transform: translateX(10px); */
+    color: #333E63;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+
 .sidebar .sidebar__seasons{
     list-style: none;
     /* display: inline; */
     display: none;
+    text-align: center;
 }
 
 
